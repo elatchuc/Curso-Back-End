@@ -1,0 +1,53 @@
+<title>Document</title> <script> var nota = prompt("Olá, Qual a sua nota?");
+    switch (nota){        
+        case '10':
+            alert("Excelente!");
+            break;
+
+        case '9':
+            alert("Muito bom!");
+            break;
+
+        case '8':
+            alert("Otimo!");
+             break;
+    
+        case '7':
+            alert("Bom");
+            break;
+
+        case '6':
+            alert("Na média");
+            break;
+        
+        case '5':
+            alert("Ruinzinho");
+            break;
+
+        case '4':
+            alert("Ruim");
+            break;
+
+        case '3':
+            alert("Pessimo");
+            break;
+
+        case '2':
+            alert("Horrivel");
+            break;
+
+        case '1':
+            alert("Horroroso");
+            break;
+
+        case '0':
+            alert("Reprovou, né lixo?");
+            break;
+
+        default:
+            alert("Nota Não Permitida.")
+
+    }
+
+    
+        </script>
