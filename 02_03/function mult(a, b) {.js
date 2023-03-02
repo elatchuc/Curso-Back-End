@@ -1,0 +1,8 @@
+function mult(a, b) {
+    let result = 0;
+    for (let i = 0; i < b; i++) {
+      result += a;
+    }
+    return result;
+  }
+  multo = console.log(mult(5000000,8880))
