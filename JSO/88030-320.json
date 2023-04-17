@@ -1,0 +1,12 @@
+    {
+    "cep":{
+        "code":"88030-320",   
+        "state":"SC",
+        "city":"Florianópolis",
+        "district":"João Paulo",
+        "address":"Rua São Miguel",
+        "status":200,
+        "ok":true,
+        "statusText":"ok"
+    }
+}

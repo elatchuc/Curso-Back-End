@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Detran</h1>
+        <input type="text" id="placa" placeholder="Digite a placa">
+        <button onclick="katiau()">buscar</button>
+    </div>
+
+    <script>     
+        let placa,marca,modelo,ano;;
+        function definir(){
+        placa = document.getElementById("placa")
+        if(placa.value.lenght == 7){
+            return true
+        }
+        return false
+    }
+
+    function katiau(){
+        definir()
+            var url = `./carros.json`;
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    for(let carros of data.carro){
+                        if(placa.value == carros.placa){
+                            alert(`O carro com a placa digitada é um ${carros.marca} ${carros.modelo} do ano ${carros.ano}`)
+                        }
+                    }
+            })
+        }
+    
+    </script>
+    </div>
+</body>
+</html>

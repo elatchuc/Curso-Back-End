@@ -1,0 +1,11 @@
+    {
+    "cep":{
+        "code":"88134-122",
+        "state":"SC",
+        "city":"Palhoça",
+        "district":"Barra do Aririú",
+        "address":"Rua Olávio de Biase (Loteamento Vila Nova)",
+        "status":200,"ok":true,
+        "statusText":"ok"
+        }
+    }

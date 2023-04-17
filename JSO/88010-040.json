@@ -1,0 +1,13 @@
+      {
+    "cep": {
+        
+        "code":"88010-040",
+        "state":"SC",
+        "city":"Florianópolis",
+        "district":"Centro",
+        "address":"Rua Álvaro de Carvalho",
+        "status":200,"ok":true,
+        "statusText":"ok"
+    }
+
+}

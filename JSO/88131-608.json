@@ -1,0 +1,12 @@
+{
+    "cep": {
+        "code":"88131-608",
+        "state":"SC",
+        "city":"Palhoça",
+        "district":"Nova Palhoça",
+        "address":"Rua Vereador Antônio Gaspar Schutz",
+        "status":200,
+        "ok":true,
+        "statusText":"ok"
+    }
+}

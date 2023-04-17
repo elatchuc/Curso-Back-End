@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Aula de JSON</h1>
+        <input type="text" id="nome" placeholder="Insira o nome">
+        <br>
+        <input type="text" id="cep" placeholder="Insira o CEP">
+        <br>
+        <button onclick="buscaEndereco();">Buscar</button> 
+        <br>
+        <input type="text" id="rua" placeholder="Logradouro">
+        <br>
+        <input type="text" id="bairro" placeholder="Bairro">
+        <br>
+        <input type="text" id="cidade" placeholder="Cidade">
+        <br>
+        <input type="text" id="estado" placeholder="Estado">
+        <br>
+        <input type="text" id="pais" placeholder="Pais">
+        <br>
+        <button onclick= "cadastro()">Cadastra</button>
+          
+    </div>
+</body>
+</html>
+<script>
+    let nome,cep,rua,bairro,cidade,estado,pais;
+    function defineCampos(){
+        nome = document.getElementById("nome")
+        cep = document.getElementById("cep");
+        rua = document.getElementById("rua");
+        bairro = document.getElementById("bairro");
+        cidade = document.getElementById("cidade");
+        estado = document.getElementById("estado");
+        pais = document.getElementById("pais");
+        if(cep.value.length == 8){
+            return true
+        }
+        
+            return false
+        }
+    
+    function buscaEndereco(){
+        if(defineCampos()){
+            var cepValido = cep.value.substr(0,5)+"-"+cep.value.substr(5)
+             var url = "https://my-json-server.typicode.com/Lucasfranken131/Curso-Back-end/cep/?code="+cepValido
+            fetch(url)
+                .then(res => res.json())
+                .then(data => { 
+                rua.value = data[0].address;
+                bairro.value = data[0].district;
+                cidade.value = data[0].city;
+                estado.value = data[0].state;
+                pais.value = "Brasil";
+            })
+            
+        }
+        else{
+            alert("CEP Invalido!")
+        }
+    }
+    function cadastro(){
+        defineCampos()
+        var pessoa = {
+            nome: nome.value,
+            cep: cep.value,
+            rua: rua.value,
+            bairro: bairro.value,
+            cidade: cidade.value,
+            estado: estado.value,
+            pais: pais.value
+        }
+        var lista = JSON.parse(localStorage.getItem("Pessoas"))
+        if(lista == null){
+            lista = []
+        }
+        lista.push(pessoa)
+        localStorage.setItem("Pessoas",JSON.stringify(lista))
+        alert("Pessoa "+ pessoa.nome+" foi cadastrada com sucesso!")
+    }
+</script>
