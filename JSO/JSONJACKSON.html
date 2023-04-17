@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .campo{
+            width: 25%;
+        }
+
+        .profile-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        img.avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        .profile-info p {
+            margin: 5px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do GitHub</title>
+</head>
+
+<body>
+    <div class="profile-container">
+        <h1>Perfil do GitHub</h1>
+        <form onsubmit="return getProfile()">
+            <input class="campo" type="text" id="usernameInput" placeholder="Digite o nome de usuário do GitHub" required>
+            <button type="submit">Buscar</button>
+        </form>
+        <div id="profileInfo" class="profile-info"></div>
+    </div>
+
+    <script>
+        function getProfile() {
+            event.preventDefault();//previne a ação padrão do navegador  
+            const username = document.getElementById('usernameInput').value;
+            var url = `https://api.github.com/users/${username}`
+            fetch(url)
+                .then(res => res.json())
+                .then(data => { 
+              
+            
+        }
+    </script>
+</body>
+
+</html>
+<!DOCTYPE html>
